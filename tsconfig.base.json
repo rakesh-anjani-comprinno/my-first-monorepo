@@ -14,7 +14,13 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@my-first-monorepo/angular-materail-module": [
+        "libs/angular-materail-module/src/index.ts"
+      ],
+      "@my-first-monorepo/feature-module": ["libs/feature-module/src/index.ts"],
+      "@my-first-monorepo/ui-component": ["libs/ui-component/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

@@ -1,28 +1,28 @@
 {
-  "name": "my-first-app",
+  "name": "my-second-app",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "app",
-  "sourceRoot": "apps/my-first-app/src",
+  "sourceRoot": "apps/my-second-app/src",
   "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/my-first-app",
-        "index": "apps/my-first-app/src/index.html",
-        "main": "apps/my-first-app/src/main.ts",
+        "outputPath": "dist/apps/my-second-app",
+        "index": "apps/my-second-app/src/index.html",
+        "main": "apps/my-second-app/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "apps/my-first-app/tsconfig.app.json",
+        "tsConfig": "apps/my-second-app/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           {
             "glob": "**/*",
-            "input": "apps/my-first-app/public"
+            "input": "apps/my-second-app/public"
           }
         ],
-        "styles": ["apps/my-first-app/src/styles.scss","libs/angular-materail-module/src/lib/assets/css/styles.scss"],
+        "styles": ["apps/my-second-app/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -56,10 +56,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "buildTarget": "my-first-app:build:production"
+          "buildTarget": "my-second-app:build:production"
         },
         "development": {
-          "buildTarget": "my-first-app:build:development"
+          "buildTarget": "my-second-app:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -67,7 +67,7 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "buildTarget": "my-first-app:build"
+        "buildTarget": "my-second-app:build"
       }
     },
     "lint": {
@@ -77,13 +77,13 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/my-first-app/jest.config.ts"
+        "jestConfig": "apps/my-second-app/jest.config.ts"
       }
     },
     "serve-static": {
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "my-first-app:build",
+        "buildTarget": "my-second-app:build",
         "port": 4200,
         "spa": true
       }

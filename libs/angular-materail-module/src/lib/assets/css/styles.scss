@@ -1,0 +1,52 @@
+@use '@angular/material' as mat;
+@include mat.core();
+// @import "assets/css/partials/includes";
+
+html, body { height: 100%; 
+}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+// Green 
+$dark: #212121; 
+$status-background-green: #a3d62d;
+$status-border-green: #0C9C71;
+$status-text-green: $dark;
+
+.p1 {
+    background-color: red;
+}
+.status-success {
+    background-color: $status-background-green !important;
+    border: 1px solid $status-border-green !important;
+    color: $status-text-green !important;
+}
+
+$light-primary: mat.m2-define-palette(mat.$m2-indigo-palette);
+$light-accent: mat.m2-define-palette(mat.$m2-pink-palette, A200, A100, A400);
+$light-theme: mat.m2-define-light-theme((
+  color: (
+    primary: $light-primary,
+    accent: $light-accent,
+  ),
+));
+
+$dark-primary: mat.m2-define-palette(mat.$m2-cyan-palette, 700);
+$dark-accent: mat.m2-define-palette(mat.$m2-amber-palette, A200, A100, A400);
+$dark-theme: mat.m2-define-dark-theme((
+  color: (
+    primary: $dark-primary,
+    accent: $dark-accent,
+  ),
+));
+
+.light-theme {
+    @include mat.all-component-themes($light-theme);
+    &.btn {
+        background: blue;
+    }
+  }
+.dark-theme {
+@include mat.all-component-themes($dark-theme);
+&.btn{
+    background: #ac1414;
+}
+}
